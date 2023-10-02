@@ -134,10 +134,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://yoursite-url/categories/0代码搭建属于自己的网站/">
+  <link rel="canonical" href="http://yoursite-url/en/redis/">
   <title>
     
-      绘野.的个人Blog
+      redis命令 - 绘野.的个人Blog
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -295,29 +295,7 @@
           <!-- LangSelect -->
           
           
-          <!-- LangSelect start -->
-          <!-- LangSelect -->
-<li>
-  <a id="lang-select-label"><i class="fa fa-globe"></i>
-    <span>
-      English
-    </span>
-    <select id="lang-select" data-canonical="categories/0代码搭建属于自己的网站/index.html">
-      
-      
-      <option value="en"  selected >
-        English
-      </option>
-      
-      <option value="cn" >
-        简体中文
-      </option>
-      
-    </select>
-  </a>
-</li>
-
-          <!-- LangSelect end -->
+          
           
           
         </ul>
@@ -369,19 +347,19 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: url('');
-      --intro-header-background-image-url-page: url('/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: url('/img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-page: url('//img/header_img/lml_bg.jpg');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/lml_bg.jpg');
     }
 
     header.intro-header {
-       /*page*/
-        background-image: var(--intro-header-background-image-url-page);
-        /* background-image: url('/img/header_img/archive_bg2.jpg'); */
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('/img/header_img/lml_bg.jpg'); */
       
     }
 
@@ -403,10 +381,42 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>My Blog</h1>
-            <!--<hr class="small">-->
-            <span class="subheading">他在无数次循环死亡中，看清了自己涌动的爱意。</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#redis命令" title="redis命令">redis命令</a>
+              
+            </div>
+            <h1>redis命令</h1>
+            <h2 class="subheading">I am still waiting for nothing...</h2>
+            <span class="meta">
+              Posted by 迟迟. on
+              2023-08-27
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">7</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">1.7k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
           </div>
           
         </div>
@@ -447,358 +457,339 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-		<!-- Main Content -->
-<div class="container">
-  <div class="row">
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h1>redis命令</h1>
+<h2 id="Redis通用命令"><code>Redis</code>通用命令</h2>
+<blockquote>
+<p>通用命令是部分数据类型的，都可以使用的指令，常见的有：</p>
+</blockquote>
+<ul>
+<li>KEYS：查看符合模板的所有key，不建议在生产环境设备上使用</li>
+<li>DEL：  删除一个指定的key</li>
+<li>EXISTS：判断key是否存在</li>
+<li>EXPIRE：给一个key设置有效期，有效期到期时该key会被自动删除</li>
+<li>TTL：查看一个KEY的剩余有效期</li>
+</ul>
+<h2 id="String类型"><code>String</code>类型</h2>
+<blockquote>
+<p>String的常见命令有：</p>
+</blockquote>
+<ul>
+<li>SET：添加或者修改已经存在的一个String类型的键值对</li>
+<li>GET：根据key获取String类型的value</li>
+<li>MSET：批量添加多个String类型的键值对</li>
+<li>MGET：根据多个key获取多个String类型的value</li>
+<li>INCR：让一个整型的key自增1</li>
+<li>INCRBY：让一个整型的key自增并指定步长，例如：incrby num 2 让num 值自增2</li>
+<li>INCRBYFLOAT：让一个浮点类型的数字自增并指定步长</li>
+<li>SETNX：添加一个String类型的键值对，前提是这个key不存在。否则不执行</li>
+<li>SETEX：添加一个String类型的键值对，并且指定有效期</li>
+</ul>
+<h2 id="Hash类型"><code>Hash</code>类型</h2>
+<blockquote>
+<p>Hash的常见命令有：</p>
+</blockquote>
+<ul>
+<li>HSET key field value：添加或者修改hash类型key的field的值</li>
+<li>HGET key field：获取一个hash类型的key的field的值</li>
+<li>HMSET：批量添加多个hash类型key的field的值</li>
+<li>HMGET：批量获取多个hash类型key的field的值</li>
+<li>HGETALL：获取一个hash类型的key中的所有的field和value</li>
+<li>HKEYS：获取一个hash类型的key中的所有的field</li>
+<li>HVALS：获取一个hash类型的key中的所有的value</li>
+<li>HINCRBY：让一个hash类型key的字段值自增并指定步长</li>
+<li>HSETNX：添加一个hash类型的key的field值，前提是这个field不存在，否则不执行</li>
+</ul>
+<h2 id="List类型"><code>List</code>类型</h2>
+<blockquote>
+<p>List的常见命令有：</p>
+</blockquote>
+<ul>
+<li>LPUSH key element…：向列表左侧插入一个或多个元素</li>
+<li>LPOP key：移除并返回列表左侧的第一个元素，没有则返回nil</li>
+<li>RPUSH key element…：向列表右侧插入一个或多个元素</li>
+<li>RPOP key：移除并返回列表右侧的第一个元素</li>
+<li>LPANGE key star end：返回一段角标范围内的所有元素</li>
+<li>BLPOP和BRPOP：与LPOP和RPOP类似，只不过在没有元素时等待指定时间，而不是直接返回nil</li>
+</ul>
+<blockquote>
+<p>如何利用List结构模拟一个栈？</p>
+<ul>
+<li>入口和出口在同一边</li>
+</ul>
+<p>如何利用List结构模拟一个队列？</p>
+<ul>
+<li>入口和出口在不同边</li>
+</ul>
+<p>如何利用List结构模拟一个阻塞队列？</p>
+<ul>
+<li>入口和出口在不同边</li>
+<li>出队时采用BLPOP或BRPOP</li>
+</ul>
+</blockquote>
+<h2 id="Set类型"><code>Set</code>类型</h2>
+<blockquote>
+<p>Set的常见命令有：</p>
+</blockquote>
+<ul>
+<li>SADD key member … ：向set中添加一个或多个元素</li>
+<li>SREM key member … : 移除set中的指定元素</li>
+<li>SCARD key： 返回set中元素的个数</li>
+<li>SISMEMBER key member：判断一个元素是否存在于set中</li>
+<li>SMEMBERS：获取set中的所有元素</li>
+<li>SINTER key1 key2 … ：求key1与key2的交集</li>
+<li>SDIFF key1 key2 … ：求key1与key2的差集</li>
+<li>SUNION key1 key2 …：求key1和key2的并集</li>
+</ul>
+<h2 id="SortedSet类型"><code>SortedSet</code>类型</h2>
+<blockquote>
+<p>SortedSet的常见命令有：</p>
+</blockquote>
+<ul>
+<li>ZADD key score member：添加一个或多个元素到sorted set ，如果已经存在则更新其score值</li>
+<li>ZREM key member：删除sorted set中的一个指定元素</li>
+<li>ZSCORE key member : 获取sorted set中的指定元素的score值</li>
+<li>ZRANK key member：获取sorted set 中的指定元素的排名</li>
+<li>ZCARD key：获取sorted set中的元素个数</li>
+<li>ZCOUNT key min max：统计score值在给定范围内的所有元素的个数</li>
+<li>ZINCRBY key increment member：让sorted set中的指定元素自增，步长为指定的increment值</li>
+<li>ZRANGE key min max：按照score排序后，获取指定排名范围内的元素</li>
+<li>ZRANGEBYSCORE key min max：按照score排序后，获取指定score范围内的元素</li>
+<li>ZDIFF、ZINTER、ZUNION：求差集、交集、并集</li>
+</ul>
+<blockquote>
+<p>注意：所有的排名默认都是升序，如果要降序则在命令的Z后面添加REV即可</p>
+</blockquote>
+<h1>Jedis</h1>
+<h2 id="使用的基本步骤">使用的基本步骤</h2>
+<p>1.引入依赖        <a target="_blank" rel="noopener" href="https://redis.io/docs/clients/java/">Java guide | Redis</a></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>redis.clients<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jedis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.3.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>2.创建Jedis对象，建立连接</p>
+<p><img src="jedis%E5%BB%BA%E7%AB%8B%E8%BF%9E%E6%8E%A5.png" alt="Jedis建立连接"></p>
+<p>3.使用Jedis，方法名与Redis命令一致</p>
+<p><img src="%E6%B5%8B%E8%AF%95String.png" alt="测试String"></p>
+<p>4.释放资源</p>
+<p><img src="%E9%87%8A%E6%94%BE%E8%B5%84%E6%BA%90.png" alt="释放资源"></p>
+<h2 id="Jedis连接池">Jedis连接池</h2>
+<p><img src="jedis%E8%BF%9E%E6%8E%A5%E6%B1%A0.png" alt="jedis连接池"></p>
+<h1>SpringDataRedis快速入门</h1>
+<p><img src="redis%E8%BF%9E%E6%8E%A5%E6%B1%A0.png" alt="redis连接池"></p>
+<p>SpringBoot已经提供了对SpringDataRedis的支持，使用很简单：(使用springboot版本为2.6.3)</p>
+<p>1.引入依赖</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--redis依赖--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-data-redis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--common-pool--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.commons<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-pool2<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.11.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>2.配置文件</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">redis:</span></span><br><span class="line">    <span class="attr">host:</span> <span class="number">123.57</span><span class="number">.210</span><span class="number">.30</span></span><br><span class="line">    <span class="attr">port:</span> <span class="number">6379</span></span><br><span class="line">    <span class="attr">password:</span> <span class="number">123321</span></span><br><span class="line">    <span class="attr">lettuce:</span></span><br><span class="line">      <span class="attr">pool:</span></span><br><span class="line">        <span class="attr">max-active:</span> <span class="number">8</span> <span class="comment">#最大连接</span></span><br><span class="line">        <span class="attr">max-idle:</span> <span class="number">8</span> <span class="comment">#最大空闲连接</span></span><br><span class="line">        <span class="attr">min-idle:</span> <span class="number">0</span> <span class="comment">#最小空闲连接</span></span><br><span class="line">        <span class="attr">max-wait:</span> <span class="string">100ms</span> <span class="comment">#连接等待时间</span></span><br></pre></td></tr></table></figure>
+<p>3.注入RedisTemplete（使用springboot2.7以上版本以下会报错）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="keyword">private</span> RedisTemplate redisTemplate;</span><br></pre></td></tr></table></figure>
+<p>4.编写测试</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">testString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//写入一条String数据</span></span><br><span class="line">        redisTemplate.opsForValue().set(<span class="string">&quot;name&quot;</span>,<span class="string">&quot;小王&quot;</span>);</span><br><span class="line">        <span class="comment">//获取String数据</span></span><br><span class="line">        Object name = redisTemplate.opsForValue().get(<span class="string">&quot;name&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;name=&quot;</span>+name);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="SpringDataRedis的序列化方式">SpringDataRedis的序列化方式</h2>
+<p>1.引入jackson依赖</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--Jackson依赖--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.fasterxml.jackson.core<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jackson-databind<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>2.自定义序列化方式</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> RedisTemplate&lt;String,Object&gt; <span class="title">redisTemplate</span><span class="params">(RedisConnectionFactory connectionFactory)</span></span>&#123;</span><br><span class="line">        <span class="comment">//创建RedisTemplete对象</span></span><br><span class="line">        RedisTemplate&lt;String, Object&gt; template = <span class="keyword">new</span> RedisTemplate&lt;&gt;();</span><br><span class="line">        <span class="comment">//设置连接工厂</span></span><br><span class="line">        template.setConnectionFactory(connectionFactory);</span><br><span class="line">        <span class="comment">//创建json序列化工具</span></span><br><span class="line">        GenericJackson2JsonRedisSerializer jsonRedisSerializer = <span class="keyword">new</span> GenericJackson2JsonRedisSerializer();</span><br><span class="line">        <span class="comment">//设置Key的序列化</span></span><br><span class="line">        template.setKeySerializer(RedisSerializer.string());</span><br><span class="line">        template.setHashKeySerializer(RedisSerializer.string());</span><br><span class="line">        <span class="comment">//设置Value的序列化</span></span><br><span class="line">        template.setValueSerializer(jsonRedisSerializer);</span><br><span class="line">        template.setHashValueSerializer(jsonRedisSerializer);</span><br><span class="line">        <span class="comment">//返回</span></span><br><span class="line">        <span class="keyword">return</span> template;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>3.创建一个对象</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@NoArgsConstructor</span></span><br><span class="line"><span class="meta">@AllArgsConstructor</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> Integer age;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>4.编写测试</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">testSaveUser</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//写入数据</span></span><br><span class="line">        redisTemplate.opsForValue().set(<span class="string">&quot;user:100&quot;</span>,<span class="keyword">new</span> User(<span class="string">&quot;胡歌&quot;</span>,<span class="number">21</span>));</span><br><span class="line">        <span class="comment">//获取数据</span></span><br><span class="line">        User o = (User) redisTemplate.opsForValue().get(<span class="string">&quot;user:100&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;o=&quot;</span>+o);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>Spring默认提供了一个StringRedisTemplete类，它的key和value的序列化方式默认就是String方式。省去了我们自定义RedisTemplete的过程。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line">   <span class="keyword">private</span> StringRedisTemplate stringRedisTemplate;</span><br><span class="line"><span class="comment">//json工具</span></span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> ObjectMapper mapper=<span class="keyword">new</span> ObjectMapper();</span><br><span class="line">   <span class="meta">@Test</span></span><br><span class="line">   <span class="function"><span class="keyword">void</span> <span class="title">testSaveUser</span><span class="params">()</span> <span class="keyword">throws</span> JsonProcessingException </span>&#123;</span><br><span class="line">       <span class="comment">//创建对象</span></span><br><span class="line">       User user = <span class="keyword">new</span> User(<span class="string">&quot;虎哥&quot;</span>,<span class="number">21</span>);</span><br><span class="line">       <span class="comment">//手动序列化</span></span><br><span class="line">       String json = mapper.writeValueAsString(user);</span><br><span class="line">       <span class="comment">//写入数据</span></span><br><span class="line">       stringRedisTemplate.opsForValue().set(<span class="string">&quot;user:100&quot;</span>,json);</span><br><span class="line">       <span class="comment">//获取数据</span></span><br><span class="line">       String jsonUser = stringRedisTemplate.opsForValue().get(<span class="string">&quot;user:100&quot;</span>);</span><br><span class="line">       <span class="comment">//手动反序列化</span></span><br><span class="line">       User user1 = mapper.readValue(jsonUser, User.class);</span><br><span class="line">       System.out.println(<span class="string">&quot;user1=&quot;</span>+user1);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<h1>总结：</h1>
+<p>RedisTemplete的两种序列化实践方案：</p>
+<p>方案一：</p>
+<p>​		1.自定义RedisTemplete</p>
+<p>​		2.修改RedisTemplete的序列化器为GenericJackson2JsonRedisSerializer</p>
+<p>方案二：</p>
+<p>​		1.使用StringRedisTemplete</p>
+<p>​		2.写入Redis时，手动把对象序列化为JSON</p>
+<p>​		3.读取Redis时，手动把读取到的JSON反序列化为对象</p>
+</blockquote>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          
+          <li class="next">
+            <a href="/en/0代码搭建属于自己的网站/" data-toggle="tooltip" data-placement="top" title="0代码搭建属于自己的网站">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=redis命令&body=Hi,I found this website and thought you might like it http://yoursite-url/en/redis/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">redis命令</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Redis%E9%80%9A%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">Redis通用命令</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#String%E7%B1%BB%E5%9E%8B"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">String类型</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Hash%E7%B1%BB%E5%9E%8B"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">Hash类型</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#List%E7%B1%BB%E5%9E%8B"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">List类型</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Set%E7%B1%BB%E5%9E%8B"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">Set类型</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#SortedSet%E7%B1%BB%E5%9E%8B"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">SortedSet类型</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Jedis</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BD%BF%E7%94%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%AD%A5%E9%AA%A4"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">使用的基本步骤</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Jedis%E8%BF%9E%E6%8E%A5%E6%B1%A0"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">Jedis连接池</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">SpringDataRedis快速入门</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#SpringDataRedis%E7%9A%84%E5%BA%8F%E5%88%97%E5%8C%96%E6%96%B9%E5%BC%8F"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">SpringDataRedis的序列化方式</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">总结：</span></a></li></ol>
+        
+        </div>
+      </aside>
     
 
-    <!-- USE SIDEBAR -->
-    <!-- Post Container -->
-    <div class="
+
+
+      <!-- Sidebar Container -->
+      <div class="
                 col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
+                col-md-10 col-md-offset-1
+                sidebar-container">
 
-      <!-- Main Content -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
-      <!-- 归档列表 -->
-
-      
-
-      <!-- 归档列表 -->
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2023">
-          <span class="tag-text">2023</span>
-        </span>
-        <ul>
-          
-          <li>
-            08-27
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/redis/" style="color: #0085a1">
-              <span>
-                redis命令
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-25
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/0代码搭建属于自己的网站/" style="color: #0085a1">
-              <span>
-                0代码搭建属于自己的网站
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-24
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/javaSE复习/" style="color: #0085a1">
-              <span>
-                javaSE复习
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-21
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/Java前后端区别/" style="color: #0085a1">
-              <span>
-                Java前后端区别
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-21
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/Java前端路线/" style="color: #0085a1">
-              <span>
-                Java前端路线
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-20
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/Java后端路线/" style="color: #0085a1">
-              <span>
-                Java后端路线
-                
-              </span>
-            </a>
-          </li>
-          
-        </ul>
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2020">
-          <span class="tag-text">2020</span>
-        </span>
-        <ul>
-          
-          <li>
-            04-17
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/Hexo-Theme-LiveMyLife/" style="color: #0085a1">
-              <span>
-                Hexo-Theme-LiveMyLife
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            04-17
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/Hexo-Theme-LiveMyLife/" style="color: #0085a1">
-              <span>
-                Hexo-Theme-LiveMyLife
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-        </ul>
-      </div>
-      
-    </div>
-  </div>
-</div>
-
-
-      <!-- 如果开启评论功能 -->
-      
-    </div>
-
-    <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-        <!-- Visitors -->
-<h5><a href="/">VISITORS</a></h5>
-
-<div class="widget">
-  <span>
-    Viewed <b><i><span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Times
-  </span>
-  <br />
-  <span>
-    <b><i><span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Visitors In Total
-  </span>
-</div>
-
-
-        <hr>
-    
         <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#redis命令" title="redis命令">redis命令</a>
+            
+          </div>
+        </section>
+        
 
-<section>
-  <h5><a href="/tags/">FEATURED TAGS</a></h5>
-  <div class="tags">
-    
-    
-    <a href="/tags/#0代码搭建属于自己的网站" title="0代码搭建属于自己的网站" rel="1">0代码搭建属于自己的网站</a>
-    
-    
-    
-    <a href="/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife" rel="2">Hexo-Theme-LiveMyLife</a>
-    
-    
-    
-    <a href="/tags/#Java前后端区别" title="Java前后端区别" rel="1">Java前后端区别</a>
-    
-    
-    
-    <a href="/tags/#Java前端路线" title="Java前端路线" rel="1">Java前端路线</a>
-    
-    
-    
-    <a href="/tags/#Java后端路线" title="Java后端路线" rel="1">Java后端路线</a>
-    
-    
-    
-    <a href="/tags/#javaSE复习" title="javaSE复习" rel="1">javaSE复习</a>
-    
-    
-    
-    <a href="/tags/#redis命令" title="redis命令" rel="1">redis命令</a>
-    
-    
+        <!-- Friends Blog -->
+        
+      </div>
+    </div>
   </div>
-</section>
+</article>
 
 
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-  <h5><a href="/about/">ABOUT ME</a></h5>
-  <div class="short-about">
 
-    
-    <img id="avatar_pic" src="/img/avatar/sky.jpg" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
-    
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
 
-    
-    <p>他在无数次循环死亡中，看清了自己涌动的爱意。</p>
-    
+<!-- anchorjs end -->
 
-    <!-- SNS Link -->
-    <ul class="list-inline">
-      
-
-      
-      <li>
-        <a target="_blank" href="https://github.com/strive7781">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-      <li>
-        <a target="_blank" href="http://weibo.com/绘野.">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-    </ul>
-  </div>
-</section>
-
-        <hr>
-    
-        <!-- RECENT POSTS -->
-
-<h5><a href="/">RECENT POSTS</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="../../en/redis/">
-      <li>redis命令</li>
-    </a>
-    
-    <a href="../../en/0%E4%BB%A3%E7%A0%81%E6%90%AD%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E7%BD%91%E7%AB%99/">
-      <li>0代码搭建属于自己的网站</li>
-    </a>
-    
-    <a href="../../en/javaSE%E5%A4%8D%E4%B9%A0/">
-      <li>javaSE复习</li>
-    </a>
-    
-    <a href="../../en/Java%E5%89%8D%E5%90%8E%E7%AB%AF%E5%8C%BA%E5%88%AB/">
-      <li>Java前后端区别</li>
-    </a>
-    
-    <a href="../../en/Java%E5%89%8D%E7%AB%AF%E8%B7%AF%E7%BA%BF/">
-      <li>Java前端路线</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
-        <!-- Archives -->
-
-<h5><a href="/archives/">archives</a></h5>
-<div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2023/08/">August 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2023/07/">July 2023</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/04/">April 2020</a><span class="archive-list-count">2</span></li></ul>
-</div>
-
-
-        <hr>
-    
-        <!-- Categories -->
-
-<h5><a href="/categories/">categories</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="/categories/#0代码搭建属于自己的网站">
-      <li>0代码搭建属于自己的网站</li>
-    </a>
-    
-    <a href="/categories/#Hexo-Theme-LiveMyLife">
-      <li>Hexo-Theme-LiveMyLife</li>
-    </a>
-    
-    <a href="/categories/#Java前后端区别">
-      <li>Java前后端区别</li>
-    </a>
-    
-    <a href="/categories/#Java前端路线">
-      <li>Java前端路线</li>
-    </a>
-    
-    <a href="/categories/#Java后端路线">
-      <li>Java后端路线</li>
-    </a>
-    
-    <a href="/categories/#javaSE复习">
-      <li>javaSE复习</li>
-    </a>
-    
-    <a href="/categories/#redis命令">
-      <li>redis命令</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
-</div>
-
-
-    
-  </div>
-</div>
 
 
 		<!-- Footer (contains ThemeColor、viewer) -->
